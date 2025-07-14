@@ -1,0 +1,43 @@
+
+.table {
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+.table thead {
+        background-color: #343a40;
+        color: white;
+    }
+
+    .table thead th {
+        font-weight: 200;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+    }
+
+    .table tbody td {
+        vertical-align: middle;
+        font-size: 14px;
+        padding: 12px 8px;
+    }
+
+    .btn-sm {
+        background-color: #212529;
+        color: #fff;
+        padding: 8px 8px;
+        font-size: 12px;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        color: #212529;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    

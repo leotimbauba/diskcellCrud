@@ -1,0 +1,19 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+{% block title %}{% if os %}Editar Ordem de Serviço{% else %}Nova Ordem de Serviço{% endif %}{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="btn text-white bg-secondary mb-3">
+        {% if os %}Editar{% else %}Nova{% endif %} Ordem de Serviço
+        <hr style="border: 3px solid #fff;">
+        <p>Cadastre uma nova Ordem de Serviço, aqui você poderá registrar todos os detalhes necessários.
+        <br>Preencha os campos abaixo para registrar uma nova Ordem de Serviço.</p>
+    </h2>
+<form method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Salvar</button>
+  <a href="{% url 'lista_os' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+</div>
+
+{% endblock %}

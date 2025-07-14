@@ -1,0 +1,9 @@
+{% extends 'base_dashboard.html' %}
+{% block title %}Excluir Produto{% endblock %}
+{% block content %}
+  <h2>Deseja excluir o produto "{{ object.nome }}"?</h2>
+  <form method="post">{% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmar</button>
+    <a href="{% url 'produto_listar' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock %}

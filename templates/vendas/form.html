@@ -1,0 +1,17 @@
+{% extends 'base_dashboard.html' %}
+
+{% block content %}
+<div class="container mt-4">
+        <h2 class="btn text-white bg-warning mb-3">
+        Nova Venda <hr style="border: 3px solid #fff;">
+        <p>Cadastre todos os produtos, aqui você poderá registrar suas vendas.
+        <br>Preencha os campos abaixo para registrar uma nova venda.</p>
+    </h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="{% url 'lista_vendas' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

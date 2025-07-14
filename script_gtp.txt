@@ -1,0 +1,3 @@
+Criar Crud de vendas. Models  opções de dinheiro, pix, cartão, produto, quantidade, valor do fornecedor, valor final, e lucros do valor. 
+ Views para incluir paginator, Urls, forms, Admin, 
+esse template vai ter como base_deshboard.html por favor tudo bem esplicado sem faltar nada.

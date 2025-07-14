@@ -1,0 +1,36 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+{% block title %}Produtos{% endblock %}
+{% block content %}
+  <h4 style="font-family: Impact, sans-serif; color: #000;">Lista de Produtos</h4>
+
+
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Estoque</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="produtos-tabela">
+      {% for produto in produtos %}
+      <tr class="produto-item">
+        <td>{{ produto.nome }}</td>
+        <td>R$ {{ produto.preco }}</td>
+        <td>{{ produto.estoque }}</td>
+        <td>
+          <a href="{% url 'produto_editar' produto.pk %}" class="btn btn-success btn-sm">Editar</a>
+          <a href="{% url 'produto_excluir' produto.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div id="paginacao" class=" mt-3"></div>
+
+  <script src="{% static 'js/produto_paginacao.js' %}"></script>
+
+{% endblock %}

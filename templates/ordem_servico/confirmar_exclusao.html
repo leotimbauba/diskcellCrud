@@ -1,0 +1,9 @@
+{% extends 'base_dashboard.html' %}
+{% block content %}
+<h2>Excluir Ordem de Serviço</h2>
+<p>Tem certeza que deseja excluir a ordem de serviço de <strong>{{ os.cliente }}</strong>?</p>
+<form method="post">{% csrf_token %}
+  <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+  <a href="{% url 'lista_os' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

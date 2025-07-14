@@ -1,0 +1,52 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+{% block title %}Ordens de Serviço{% endblock %}
+{% block content %}
+<h2 style="font-family: Impact, sans-serif; color: #000;">Ordens de Serviço</h2>
+
+<form method="get" class="mb-3">
+  <label style="font-family: sans-serif;">Status:</label>
+  <select class="form-select" style="font-family: Impact, sans-serif; border-radius: 2px; padding: 5px;" name="status" onchange="this.form.submit()">
+    <option value="">Todos</option>
+    <option value="aberto" {% if status_filter == "aberto" %}selected{% endif %}>Aberto</option>
+    <option value="andamento" {% if status_filter == "andamento" %}selected{% endif %}>Em Andamento</option>
+    <option value="concluido" {% if status_filter == "concluido" %}selected{% endif %}>Concluído</option>
+    <option value="cancelado" {% if status_filter == "cancelado" %}selected{% endif %}>Cancelado</option>
+  </select>
+</form>
+
+<table style="margin-bottom: 10px;" class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>ID</th>
+      <th>Cliente</th>
+      <th>Produto</th>
+      <th>Valor</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody id="ordem-tabela">
+    {% for os in page_obj %}
+    <tr class="ordem-item">
+      <td>{{ os.id }}</td>
+      <td>{{ os.cliente.nome }}</td>
+      <td>{{ os.produto.nome }}</td>
+      <td>R$ {{ os.valor }}</td>
+      <td>{{ os.get_status_display }}</td>
+      <td>
+        <a href="{% url 'editar_os' os.id %}" class="btn btn-sm btn-success">Editar</a>
+        <a href="{% url 'excluir_os' os.id %}" class="btn btn-sm btn-danger">Excluir</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6">Nenhuma ordem encontrada.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div id="ordempaginacao" class="mt-3"></div>
+
+  <script src="{% static 'js/ordens_paginacao.js' %}"></script>
+
+{% endblock %}

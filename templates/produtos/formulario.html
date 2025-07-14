@@ -1,0 +1,19 @@
+{% extends 'base_dashboard.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Produto{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h2 class="btn text-white bg-success mb-3">
+    {{ view.object.pk|yesno:"Editar Produto,Novo Produto" }}
+
+    <hr style="border: 3px solid #fff;">
+    <p>Cadastre todos os Produtos, aqui você poderá registrar todos seus Produtos.
+    <br>Preencha os campos ao lado para registrar um novo Produto.</p>
+  </h2>
+  <form method="post">{% csrf_token %}
+    {{ form|crispy }}
+    <button style="margin: 10px;" type="submit" class="btn btn-success">Salvar</button>
+    <a href="{% url 'produto_listar' %}" class="btn btn-secondary">Voltar</a>
+  </form>
+</div>
+{% endblock %}

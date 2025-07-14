@@ -1,0 +1,254 @@
+<!--DASHBOARD-->
+<div class="row mb-0">
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-success mb-3">
+      <div class="btn btn-success card-body">
+        <h6 class="card-title">QTD Clientes</h6>
+        <p class="card-text display-6">{{ total_clientes }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-success mb-3">
+      <div class="btn btn-warning card-body">
+        <h6 class="card-title">QTD Produtos</h6>
+        <p class="card-text display-6">{{ total_produtos }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-warning mb-3">
+      <div class="btn btn-danger card-body">
+        <h6 class="card-title">QTD Vendas Produtos</h6>
+        <p class="card-text display-6">{{ total_vendas_produtos }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-warning mb-3">
+      <div class="btn btn-secondary card-body">
+        <h6 class="card-title">QTD de Serviços</h6>
+        <p class="card-text display-6">{{ total_servicos }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-0">
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-success mb-3">
+      <div class="btn btn-success card-body">
+        <h6 class="card-title">Produtos Cadastrados</h6>
+        <p class="card-text display-6">{{ total_produtos }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-success mb-3">
+      <div class="btn btn-warning card-body">
+        <h6 class="card-title">Estoque Total</h6>
+        <p class="card-text display-6">{{ estoque_total }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-warning mb-3">
+      <div class="btn btn-danger card-body">
+        <h6 class="card-title">Valor Total Produto (R$)</h6>
+        <p class="card-text display-6">R$ {{ valor_total }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-warning mb-3">
+      <div class="btn btn-secondary card-body">
+        <h6 class="card-title">Valor Total Ganhos (R$)</h6>
+        <p class="card-text display-6">R$ {{ valor_total }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ Dashboard.html }}
+
+{% extends 'base_dashboard.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<h5 style="color: white;">📊 Painel de Controle</h5>
+<div class="row mb-0">
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-success mb-3">
+      <div class="btn btn-success card-body">
+        <h6 class="card-title">Produtos Cadastrados</h6>
+        <p class="card-text display-6">{{ total_produtos }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-success mb-3">
+      <div class="btn btn-warning card-body">
+        <h6 class="card-title">Estoque Total</h6>
+        <p class="card-text display-6">{{ estoque_total }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-warning mb-3">
+      <div class="btn btn-danger card-body">
+        <h6 class="card-title">Valor Total Produto (R$)</h6>
+        <p class="card-text display-6">R$ {{ valor_total }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-warning mb-3">
+      <div class="btn btn-secondary card-body">
+        <h6 class="card-title">Valor Total Ganhos (R$)</h6>
+        <p class="card-text display-6">R$ {{ valor_total }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mb-0">
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-success mb-3">
+      <div class="btn btn-success card-body">
+        <h6 class="card-title">Produtos Cadastrados</h6>
+        <p class="card-text display-6">{{ total_produtos }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-success mb-3">
+      <div class="btn btn-warning card-body">
+        <h6 class="card-title">Estoque Total</h6>
+        <p class="card-text display-6">{{ estoque_total }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-warning mb-3">
+      <div class="btn btn-danger card-body">
+        <h6 class="card-title">Valor Total Produto (R$)</h6>
+        <p class="card-text display-6">R$ {{ valor_total }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div style="margin: 5px;" class="card text-white bg-warning mb-3">
+      <div class="btn btn-secondary card-body">
+        <h6 class="card-title">Valor Total Ganhos (R$)</h6>
+        <p class="card-text display-6">R$ {{ valor_total }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{{--VIEW --}}
+
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
+from .models import Produto
+from .forms import ProdutoForm
+from django.http import JsonResponse
+from django.core import serializers
+from django.db.models import Q, Sum, Count  # 👈 ESTA LINHA É ESSENCIAL
+
+def produtos_json(request):
+    produtos = Produto.objects.all().order_by('id')
+    data = serializers.serialize('json', produtos)
+    return JsonResponse(data, safe=False)
+
+class DashboardView(TemplateView):
+    template_name = 'produtos/dashboard.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        produtos = Produto.objects.all()
+        context['total_produtos'] = produtos.count()
+        context['estoque_total'] = produtos.aggregate(Sum('estoque'))['estoque__sum'] or 0
+        context['valor_total'] = produtos.aggregate(Sum('preco'))['preco__sum'] or 0
+        return context
+
+class ProdutoListView(ListView):
+    model = Produto
+    template_name = 'produtos/lista.html'
+    context_object_name = 'produtos'
+    def get_queryset(self):
+        busca = self.request.GET.get('q')
+        if busca:
+            return Produto.objects.filter(Q(nome__icontains=busca))
+        return Produto.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['q'] = self.request.GET.get('q', '')
+        return context
+
+class ProdutoCreateView(SuccessMessageMixin, CreateView):
+    model = Produto
+    form_class = ProdutoForm
+    template_name = 'produtos/formulario.html'
+    success_url = reverse_lazy('produto_listar')
+    success_message = 'Produto criado com sucesso!'
+
+class ProdutoUpdateView(SuccessMessageMixin, UpdateView):
+    model = Produto
+    form_class = ProdutoForm
+    template_name = 'produtos/formulario.html'
+    success_url = reverse_lazy('produto_listar')
+    success_message = 'Produto atualizado com sucesso!'
+
+class ProdutoDeleteView(DeleteView):
+    model = Produto
+    template_name = 'produtos/confirmar_exclusao.html'
+    success_url = reverse_lazy('produto_listar')
+
+{{-- Model-- }}
+from django.db import models
+
+class Produto(models.Model):
+    nome = models.CharField(max_length=100)
+    descricao = models.TextField()
+    preco = models.DecimalField(max_digits=10, decimal_places=2)
+    estoque = models.IntegerField()
+    criado_em = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.nome
+<!-- URLS -->
+from django.urls import path
+from .views import produtos_json
+from .views import DashboardView, ProdutoListView, ProdutoCreateView, ProdutoUpdateView, ProdutoDeleteView
+
+urlpatterns = [
+    path('', DashboardView.as_view(), name='dashboard'),
+    path('produtos/', ProdutoListView.as_view(), name='produto_listar'),
+    path('produtos/novo/', ProdutoCreateView.as_view(), name='produto_criar'),
+    path('produtos/editar/<int:pk>/', ProdutoUpdateView.as_view(), name='produto_editar'),
+    path('produtos/excluir/<int:pk>/', ProdutoDeleteView.as_view(), name='produto_excluir'),
+]
+<!-- ADMIN-->
+
+from django.contrib import admin
+from .models import Produto
+
+@admin.register(Produto)
+class ProdutoAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'preco', 'estoque', 'criado_em')
+    list_filter = ('criado_em',)
+    search_fields = ('nome', 'descricao')
+    ordering = ('-criado_em',)
+
+<!--FORM-->
+
+from django import forms
+from .models import Produto
+
+class ProdutoForm(forms.ModelForm):
+    class Meta:
+        model = Produto
+        fields = ['nome', 'descricao', 'preco', 'estoque']
+

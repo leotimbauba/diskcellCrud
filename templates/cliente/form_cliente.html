@@ -1,0 +1,39 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+{% block title %}{% if form.instance.pk %}Editar Cliente{% else %}Novo Cliente{% endif %}{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="btn text-white bg-danger mb-3">{% if form.instance.pk %}Editar{% else %}Novo{% endif %} Cliente <hr style="border: 3px solid #fff;">
+        <p>Cadastre todos os Clientes, aqui você poderá registrar todos seus Clientes.
+        <br>Preencha os campos ao lado para registrar um novo Cliente.</p>
+    </h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-danger">Salvar</button>
+        <a href="{% url 'listar_clientes' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+<script>
+    function formatarTelefone(campo) {
+        let numero = campo.value.replace(/\D/g, '');
+
+        if (numero.length <= 10) {
+            campo.value = numero.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+        } else {
+            campo.value = numero.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const telefoneInput = document.getElementById('telefone');
+        if (telefoneInput) {
+            telefoneInput.addEventListener('input', function () {
+                formatarTelefone(this);
+            });
+        }
+    });
+</script>
+
+{% endblock %}

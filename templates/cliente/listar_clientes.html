@@ -1,0 +1,42 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+{% block title %}Clientes{% endblock %}
+{% block content %}
+<h4 style="font-family: Impact, sans-serif; color: #000;">Lista de Clientes</h4>
+
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="clientes-tabela">
+            {% if clientes %}
+                {% for cliente in clientes %}
+                <tr class="cliente-item">
+                    <td>{{ cliente.nome }}</td>
+                    <td>{{ cliente.email }}</td>
+                    <td>{{ cliente.telefone }}</td>
+                    <td>
+                        <a href="{% url 'editar_cliente' cliente.id %}" class="btn btn-success btn-sm">Editar</a>
+                        <a href="{% url 'excluir_cliente' cliente.id %}" class="btn btn-danger btn-sm" onclick="return confirm('Confirmar exclusão?')">Excluir</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="4">Nenhum cliente encontrado.</td></tr>
+                {% endfor %}
+            {% else %}
+                <tr><td colspan="4">Nenhum cliente encontrado.</td></tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+
+  <div id="paginacao-clientes" class="mt-3"></div>
+
+  <script src="{% static 'js/clientes_paginacao.js' %}"></script>
+
+{% endblock %}
