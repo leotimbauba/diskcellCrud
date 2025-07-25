@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{% static 'css/dashboard_style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/vendas.css' %}" />
     <link rel="stylesheet" href="{% static 'css/ordem_servico.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -59,10 +60,11 @@
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link btn btn-warning text-dark me-1"
+                  class="nav-link btn btn-warning text-white me-1"
                   href="{% url 'nova_venda' %}"
                   >➕ Venda</a
                 >
+              </li>
               </li>
               <li class="nav-item">
                 <a
@@ -70,7 +72,18 @@
                   href="{% url 'nova_os' %}"
                   >➕ Serviço</a
                 >
-              </li>
+                <li class="nav-item">
+                <a
+                  class="nav-link btn btn-danger text-white me-1"
+                  href="{% url 'marca_create' %}">➕ Marca
+                </a
+                >
+                <li class="nav-item">
+                <a
+                  class="nav-link btn btn-success text-white me-1"
+                  href="{% url 'modelo_create' %}">➕ Modelos
+                </a
+                >
             </ul>
 
             <!-- Formulário de busca no menu -->
@@ -94,19 +107,39 @@
         <div class="col-12 col-md-3 mb-3">
           <div class="d-grid gap-2">
             <a class="btn btn-info btn-lg" href="{% url 'dashboard' %}"
-              >📊 Dashboard</a
+              ><span class="material-symbols-outlined">
+dashboard
+</span>Painel de Controle</a
             >
             <a class="btn btn-danger btn-lg" href="{% url 'listar_clientes' %}"
-              >🧑 Clientes</a
+              ><span class="material-symbols-outlined">
+person
+</span> Clientes</a
             >
             <a class="btn btn-success btn-lg" href="{% url 'produto_listar' %}"
-              >📦 Produtos</a
+              ><span class="material-symbols-outlined">
+inventory_2
+</span> Produtos</a
             >
             <a class="btn btn-warning btn-lg" href="{% url 'lista_vendas' %}"
-              >💰 Vendas</a
+              ><span class="material-symbols-outlined">
+money
+</span> Vendas</a
             >
             <a class="btn btn-secondary btn-lg" href="{% url 'lista_os' %}"
-              >🛠️ Serviços</a
+              ><span class="material-symbols-outlined">
+build
+</span> Serviços</a
+            >
+            <a class="btn btn-danger btn-lg" href="{% url 'marca_list' %}"
+              ><span class="material-symbols-outlined">
+local_offer
+</span> Marcas</a
+            >
+            <a class="btn btn-success btn-lg" href="{% url 'modelo_list' %}"
+              ><span class="material-symbols-outlined">
+devices
+</span> Modelos</a
             >
             <a class="btn btn-dark btn-lg" href="/admin/">⚙️ Admin</a>
           </div>

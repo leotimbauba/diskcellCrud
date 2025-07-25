@@ -35,8 +35,12 @@
       <td>R$ {{ os.valor }}</td>
       <td>{{ os.get_status_display }}</td>
       <td>
-        <a href="{% url 'editar_os' os.id %}" class="btn btn-sm btn-success">Editar</a>
-        <a href="{% url 'excluir_os' os.id %}" class="btn btn-sm btn-danger">Excluir</a>
+        <a href="{% url 'editar_os' os.id %}" class="btn btn-sm btn-success"><span class="material-symbols-outlined">
+edit
+</span></a>
+        <a href="{% url 'excluir_os' os.id %}" class="btn btn-sm btn-danger"><span class="material-symbols-outlined">
+delete
+</span></a>
       </td>
     </tr>
     {% empty %}

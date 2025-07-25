@@ -7,7 +7,7 @@
         <p>Cadastre todos os produtos, aqui você poderá registrar suas vendas.
         <br>Preencha os campos abaixo para registrar uma nova venda.</p>
     </h2>
-    <form method="post">
+    <form method="get" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-success">Salvar</button>

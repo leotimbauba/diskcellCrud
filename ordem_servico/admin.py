@@ -3,6 +3,6 @@ from .models import OrdemServico
 
 @admin.register(OrdemServico)
 class OrdemServicoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'cliente', 'produto', 'valor', 'status', 'criado_em')
-    search_fields = ('cliente', 'produto')
-    list_filter = ('status',)
+    list_display = ('id', 'cliente', 'marca', 'modelo', 'produto', 'status', 'valor', 'criado_em')
+    list_filter = ('status', 'marca', 'modelo')
+    search_fields = ('cliente__nome', 'modelo__nome', 'marca__nome')

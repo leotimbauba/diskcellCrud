@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'vendas',
     'django_adminlte',
     'ordem_servico',
+    'app_marca',  # Aplicação de marcas e modelos
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"

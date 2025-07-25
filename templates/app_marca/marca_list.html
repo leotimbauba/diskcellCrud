@@ -1,0 +1,33 @@
+{% extends 'base_dashboard.html' %}
+{% load static %}
+{% block title %}Marcas{% endblock %}
+{% block content %}
+<h4 style="font-family: Impact, sans-serif; color: #000;">Lista de Marcas</h4>
+
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Nome</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody id="marca-tabela">
+    {% for marca in object_list %}
+    <tr class="marca-item">
+      <td>{{ marca.nome }}</td>
+      <td>
+        <a class="btn btn-success btn-sm" href="{% url 'marca_update' marca.id %}"><span class="material-symbols-outlined">
+edit
+</span></a>
+        <a class="btn btn-danger btn-sm" href="{% url 'marca_delete' marca.id %}"><span class="material-symbols-outlined">
+delete
+</span></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div id="paginacao-marca" class="mt-3"></div>
+
+  <script src="{% static 'js/marca_paginacao.js' %}"></script>
+{% endblock %}
