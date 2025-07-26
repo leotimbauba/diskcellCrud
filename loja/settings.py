@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'adminlte3',
+    'adminlte3_theme',
     'produtos',
     'crispy_forms',  # Para formulários bonitos
     'crispy_bootstrap5',
