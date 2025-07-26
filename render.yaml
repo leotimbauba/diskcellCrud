@@ -11,3 +11,7 @@ services:
         value: 'django-insecure-ar3sbp5qi&fn-89tk0q5ejlv4raft$l3xuhhb6=lh=wh#m7-gn'
       - key: DEBUG
         value: False
+
+    preDeployCommand: |
+      python manage.py migrate
+      python manage.py collectstatic --noinput
