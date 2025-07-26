@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: loja
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn loja.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: loja.settings
+      - key: SECRET_KEY
+        value: 'django-insecure-ar3sbp5qi&fn-89tk0q5ejlv4raft$l3xuhhb6=lh=wh#m7-gn'
+      - key: DEBUG
+        value: False

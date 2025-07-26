@@ -1,8 +1,10 @@
 from django.urls import path
+from . import views
 from .views import produtos_json
 from .views import DashboardView, ProdutoListView, ProdutoCreateView, ProdutoUpdateView, ProdutoDeleteView
 
 urlpatterns = [
+    path('', views.index, name='home'),
     path('', DashboardView.as_view(), name='dashboard'),
     path('produtos/', ProdutoListView.as_view(), name='produto_listar'),
     path('produtos/novo/', ProdutoCreateView.as_view(), name='produto_criar'),

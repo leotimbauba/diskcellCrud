@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
@@ -7,6 +8,8 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.db.models import Q, Sum, Avg # 👈 ESTA LINHA É ESSENCIAL
 
+def index(request):
+    return render(request, 'produtos/index.html')
 
 class DashboardView(TemplateView):
     template_name = 'produtos/dashboard.html'
